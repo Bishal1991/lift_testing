@@ -5,6 +5,14 @@ namespace lift_testing
 {
     public partial class Form1 : Form
     {
+        enum DoorState
+        {
+            Close,
+            Open,
+            Opening,
+            Closing
+        }
+        private DoorState doorState = DoorState.Close;
         private Timer doorTimer = new Timer();
         private int speed = 5;
 
@@ -12,27 +20,58 @@ namespace lift_testing
         {
             InitializeComponent();
 
-            doorTimer.Interval = 20;
+            doorTimer.Interval = 10;
             doorTimer.Tick += DoorTimer_Tick;
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            doorTimer.Start();
+            if (doorState == DoorState.Close)
+            {
+                doorState = DoorState.Opening;
+                doorTimer.Start();
+            }
+            else if (doorState == DoorState.Open)
+            {
+                doorState = DoorState.Closing;
+                doorTimer.Start();
+
+            }
         }
 
         private void DoorTimer_Tick(object sender, EventArgs e)
         {
-            // Left door moves left
-            pictureBox1.Left -= speed;
-
-            // Right door moves right
-            pictureBox2.Left += speed;
-
-            // Stop when both doors are outside the form
-            if (pictureBox1.Right <= 0 &&
-                pictureBox2.Left >= this.ClientSize.Width)
+            switch (doorState)
             {
-                doorTimer.Stop();
+                case DoorState.Opening:
+
+                    pictureBox2.Left -= speed;
+                    pictureBox3.Left += speed;
+
+                    if (pictureBox2.Right <= 0 &&
+                        pictureBox3.Left >= this.ClientSize.Width)
+                    {
+                        doorTimer.Stop();
+                        doorState = DoorState.Open;
+                    }
+
+                    break;
+
+                case DoorState.Closing:
+
+                    pictureBox2.Left += speed;
+                    pictureBox3.Left -= speed;
+
+                    if (pictureBox2.Left >= this.ClientSize.Width/2 &&
+                        pictureBox3.Left <= this.ClientSize.Width/2)
+                    {
+                        pictureBox2.Left = this.ClientSize.Width/2;
+                        pictureBox3.Left = this.ClientSize.Width/2;
+
+                        doorTimer.Stop();
+                        doorState = DoorState.Close;
+                    }
+
+                    break;
             }
         }
     }
