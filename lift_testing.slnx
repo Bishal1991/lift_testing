@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../addnumber/addnumber.csproj" />
+  <Project Path="lift_testing.csproj" />
+</Solution>
