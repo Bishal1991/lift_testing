@@ -15,6 +15,8 @@ namespace lift_testing
         private DoorState doorState = DoorState.Close;
         private Timer doorTimer = new Timer();
         private int speed = 5;
+        private int leftdoorstart;
+        private int rightdoorstart;
 
         public Form1()
         {
@@ -22,6 +24,9 @@ namespace lift_testing
 
             doorTimer.Interval = 10;
             doorTimer.Tick += DoorTimer_Tick;
+
+            leftdoorstart = pictureBox2.Left;
+            rightdoorstart = pictureBox3.Left;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,6 +41,7 @@ namespace lift_testing
                 doorTimer.Start();
 
             }
+            
         }
 
         private void DoorTimer_Tick(object sender, EventArgs e)
@@ -47,8 +53,8 @@ namespace lift_testing
                     pictureBox2.Left -= speed;
                     pictureBox3.Left += speed;
 
-                    if (pictureBox2.Right <= 0 &&
-                        pictureBox3.Left >= this.ClientSize.Width)
+                    if (pictureBox2.Right <= panel1.ClientSize.Width &&
+                        pictureBox3.Left >= panel1.ClientSize.Width)
                     {
                         doorTimer.Stop();
                         doorState = DoorState.Open;
@@ -61,11 +67,11 @@ namespace lift_testing
                     pictureBox2.Left += speed;
                     pictureBox3.Left -= speed;
 
-                    if (pictureBox2.Left >= this.ClientSize.Width/2 &&
-                        pictureBox3.Left <= this.ClientSize.Width/2)
+                    if (pictureBox2.Left >= leftdoorstart &&
+                        pictureBox3.Left <= rightdoorstart)
                     {
-                        pictureBox2.Left = this.ClientSize.Width/2;
-                        pictureBox3.Left = this.ClientSize.Width/2;
+                        pictureBox2.Left = leftdoorstart;
+                        pictureBox3.Left = rightdoorstart;
 
                         doorTimer.Stop();
                         doorState = DoorState.Close;
