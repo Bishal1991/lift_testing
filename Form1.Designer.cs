@@ -35,6 +35,7 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             button2 = new Button();
+            button3 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -102,11 +103,22 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(152, 216);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 3;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1108, 748);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(panel1);
             Controls.Add(button1);
@@ -127,5 +139,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private Button button2;
+        private Button button3;
     }
 }

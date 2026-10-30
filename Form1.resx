@@ -121,7 +121,7 @@
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIsAAAGuCAIAAAAvbWKZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAD
-        1wAAA9cBGInNLwAA/7JJREFUeF7M/XdzI12W5gnG//sBxmxt1mamd7qnu6urKrMyXxVaS2oJEloSWmtF
+        1gAAA9YBys4vywAA/7JJREFUeF7M/XdzI12W5gnG//sBxmxt1mamd7qnu6urKrMyXxVaS2oJEloSWmtF
         ANQEobVW1FprBskgQzJ0vCrzrdr9KmvXD3jpATAi36zumR23x2hOJxjCf3jOOffc6xcXEvFQJh3LpGPJ
         RDjgdw8OuKwWQz6XSqdixUKmkE+PjxWKhdxoqZDNpPK5zGgeqVTMjpZyY6P5sdH86Fi+NJrLF9LFUrZQ
         yuaLmXwxVxwt5McKudHs2ERxdCJfGs8Vx7LFUqpQTOYLiXwhUSzGC4VYMRdFyocrVMiFcplANhXMpoK5
@@ -1537,7 +1537,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAI0AAAG6CAIAAAC6NFJTAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAD
-        1wAAA9cBGInNLwAA/7JJREFUeF7c/Qd740iW5wvnZ7p7d6erTVVWdffce/fuzE532XTyEklJNPLee9F7
+        1gAAA9YBys4vywAA/7JJREFUeF7c/Qd740iW5wvnZ7p7d6erTVVWdffce/fuzE532XTyEklJNPLee9F7
         J9GIlCjvvfcSPSnvbcqnlEpf1d3z7vsEDhmEQEmVVV1j9sbzfygoEADB+OGcOAgEAg9S4pm0kNDw7x49
         +fOX3/75fz7++s+PvvrTk2++fPTVn/78T//9T//03598+1VMRGg8PZrJiGHFxXCYMWnJcYV5qRWlOdzy
         PBG/WMQv5ZYX8CoKZeJKhZRXo1ep5AKVXKBRiqrUEkOVVK+V6KukRp3cqFMaqhWGaoVRpzQZtCaD1mys
@@ -2861,7 +2861,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyAAAAJYCAIAAAAVFBUnAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAA/7JJREFUeF7k/VebXNmVJQjWT5qqLNUpSAbgCkCQ2V0v09NVmUkmk0xBTUYEGVDu
+        EAAACxABrSO9dQAA/7JJREFUeF7k/VebXNmVJQjWT5qqLNUpSAbgCkCQ2V0v09NVmUkmk0xBTUYEGVDu
         DhUSGg64NOHKXGstTWvlCgCZqqaqpqdnHvqpn+ZpvnOX2bJl+5qDSVYEg8nCdz585teuXbHPFmuLs8+/
         CE3NuDE9FZ6JhGcio7OTGOGZidHZyeBUZHhiPBiZmV5eW9o8XN6JzW/sz27szazvTq/tTK1uRlY2plY3
         p1Y3J5dXJ5ZWxpeWxhYXRxcWwvPzowsL7sP0bDAyHZ6ZHp2dCU1OvtXZ2dbVeaGjvaOr82J7W1dne0f7

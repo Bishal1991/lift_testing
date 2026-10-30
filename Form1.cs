@@ -1,4 +1,4 @@
-
+using System.Threading.Tasks;
 using Timer = System.Windows.Forms.Timer;
 
 namespace lift_testing
@@ -22,10 +22,10 @@ namespace lift_testing
         private liftState liftSt = liftState.still;
         private Timer doorTimer = new Timer();
         private Timer liftTimer = new Timer();
-        private int speed = 5;
+        private int speed = 3;
         private int leftdoorstart;
         private int rightdoorstart;
-        
+
 
         public Form1()
         {
@@ -102,23 +102,56 @@ namespace lift_testing
             }
         }
 
-        private void LiftTimer_Tick(object? sender, EventArgs e)
+        private async void LiftTimer_Tick(object? sender, EventArgs e)
         {
             int bottom = panel1.ClientSize.Height - pictureBox1.Height;
+            int top = 0;
 
-            pictureBox1.Top += speed;
-            pictureBox2.Top += speed;
-            pictureBox3.Top += speed;
-
-            if (pictureBox1.Top >= bottom && pictureBox2.Top >= bottom && pictureBox3.Top >= bottom)
+            pictureBox1.Top += speed * 2;
+            pictureBox2.Top += speed * 2;
+            pictureBox3.Top += speed * 2;
+            if (liftSt == liftState.movingDown)
             {
-                pictureBox1.Top = bottom;
-                liftTimer.Stop();
-                liftSt = liftState.still;
+
+                if (pictureBox1.Top >= bottom &&
+                    pictureBox2.Top >= bottom &&
+                    pictureBox3.Top >= bottom)
+                {
+                    pictureBox1.Top = bottom;
+                    liftTimer.Stop();
+                    liftSt = liftState.still;
+
+                    await Task.Delay(1000);
+
+                    button1_Click(this, EventArgs.Empty);
+                }
+            }
+            else if(liftSt == liftState.movingUp)
+            {
+                if(pictureBox1.Top >= top &&
+                    pictureBox2.Top >= top &&
+                    pictureBox3.Top >= top)
+                {
+                    //pictureBox1.Top = top;
+                    liftTimer.Stop();
+                    liftSt = liftState.still;
+
+                    await Task.Delay(1000);
+
+                    button1_Click(this, EventArgs.Empty);
+                }
             }
 
         }
 
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(liftSt == liftState.still && doorState == DoorState.Close)
+            {
+                liftSt = liftState.movingUp;
+                liftTimer.Start();
+                doorTimer.Start();
+            }
+        }
     }
 }
