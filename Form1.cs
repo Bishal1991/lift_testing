@@ -107,11 +107,12 @@ namespace lift_testing
             int bottom = panel1.ClientSize.Height - pictureBox1.Height;
             int top = 0;
 
-            pictureBox1.Top += speed * 2;
-            pictureBox2.Top += speed * 2;
-            pictureBox3.Top += speed * 2;
             if (liftSt == liftState.movingDown)
             {
+
+                pictureBox1.Top += speed * 2;
+                pictureBox2.Top += speed * 2;
+                pictureBox3.Top += speed * 2;
 
                 if (pictureBox1.Top >= bottom &&
                     pictureBox2.Top >= bottom &&
@@ -128,11 +129,16 @@ namespace lift_testing
             }
             else if(liftSt == liftState.movingUp)
             {
-                if(pictureBox1.Top >= top &&
-                    pictureBox2.Top >= top &&
-                    pictureBox3.Top >= top)
+
+                pictureBox1.Top -= speed * 2;
+                pictureBox2.Top -= speed * 2;
+                pictureBox3.Top -= speed * 2;
+
+                if (pictureBox1.Top <= top &&
+                    pictureBox2.Top <= top &&
+                    pictureBox3.Top <= top)
                 {
-                    //pictureBox1.Top = top;
+                    pictureBox1.Top = top;
                     liftTimer.Stop();
                     liftSt = liftState.still;
 
